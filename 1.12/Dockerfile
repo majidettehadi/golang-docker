@@ -10,8 +10,8 @@ RUN set -ex \
 		pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
-ENV GOLANG_VERSION 1.11.9
-ENV Sha256 e88aa3e39104e3ba6a95a4e05629348b4a1ec82791fb3c941a493ca349730608
+ENV GOLANG_VERSION 1.12.4
+ENV Sha256 d7d1f1f88ddfe55840712dc1747f37a790cbcaa448f6c9cf51bbe10aa65442f5
 
 RUN set -ex \
 	&& url="https://golang.org/dl/go${GOLANG_VERSION}.linux-amd64.tar.gz" \
