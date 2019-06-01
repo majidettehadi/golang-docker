@@ -22,11 +22,11 @@ RUN set -ex \
 	&& export PATH="/usr/local/go/bin:$PATH" \
 	&& go version
 
-RUN set -ex \
-	&& curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
-
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 WORKDIR $GOPATH
+
+RUN set -ex \
+	&& curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
