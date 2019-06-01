@@ -8,7 +8,6 @@ RUN set -ex \
 		libc6-dev \
 		make \
 		pkg-config \
-	&& curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh \
     && rm -rf /var/lib/apt/lists/*
 
 ENV GOLANG_VERSION 1.10.8
@@ -22,6 +21,9 @@ RUN set -ex \
 	&& rm go.tgz \
 	&& export PATH="/usr/local/go/bin:$PATH" \
 	&& go version
+
+RUN set -ex \
+	&& curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
