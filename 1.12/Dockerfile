@@ -8,6 +8,7 @@ RUN set -ex \
 		libc6-dev \
 		make \
 		pkg-config \
+		go-dep \
     && rm -rf /var/lib/apt/lists/*
 
 ENV GOLANG_VERSION 1.12.4
