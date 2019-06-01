@@ -8,7 +8,7 @@ RUN set -ex \
 		libc6-dev \
 		make \
 		pkg-config \
-		go-dep \
+	&& curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh \
     && rm -rf /var/lib/apt/lists/*
 
 ENV GOLANG_VERSION 1.10.8
